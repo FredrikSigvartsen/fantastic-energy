@@ -5,7 +5,7 @@ import "@fontsource/cinzel"
 
 const theme = extendTheme({
   fonts: {
-    heading: "Cinzel", //"Dancing Script"
+    heading: "Dancing Script", //"Cinzel"
     body: "Open Sans",
   },
   sizes: {

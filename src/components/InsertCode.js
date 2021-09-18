@@ -20,13 +20,13 @@ export const InsertCode = ({ onValidated }) => {
   }
   return (
     <Center>
-      <Box w="100vw" p="20rem">
+      <Box w="100vw" p="20vw">
         <Heading pb="20px" textAlign="center">
           Sett inn kode
         </Heading>
         <Center>
           <Input
-            w="30vw"
+            w="300px"
             size="lg"
             onChange={handleChange}
             isInvalid={!isValid(value)}
