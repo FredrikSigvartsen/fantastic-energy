@@ -6,21 +6,26 @@ import { Navbar } from "./Navbar"
 import Footer from "./Footer"
 import InsertCode from "./InsertCode"
 import theme from "../theme"
+import useStore from "../store/store"
+import shallow from "zustand/shallow"
 
 const Layout = ({ children }) => {
-  const { isOpen, onToggle } = useDisclosure(false)
+  const [isValidated, setIsValidated] = useStore(
+    state => [state.isValidated, state.setIsValidated],
+    shallow
+  )
 
-  if (!isOpen)
+  if (!isValidated)
     return (
       <ChakraProvider theme={theme}>
         <Navbar />
-        <InsertCode onValidated={() => onToggle()} />
+        <InsertCode onValidated={() => setIsValidated(true)} />
       </ChakraProvider>
     )
 
   return (
     <ChakraProvider theme={theme}>
-      <ScaleFade initialScale={0.6} in={isOpen}>
+      <ScaleFade initialScale={0.6} in={isValidated}>
         <Navbar />
         {children}
         <Footer />

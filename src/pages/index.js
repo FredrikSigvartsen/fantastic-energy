@@ -1,6 +1,15 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { Box, Heading, Center, SimpleGrid, Text, Image } from "@chakra-ui/react"
+import { Link } from "gatsby"
+import {
+  Box,
+  Heading,
+  Center,
+  SimpleGrid,
+  Text,
+  Image,
+  Button,
+} from "@chakra-ui/react"
 import RomanticImage from "../img/bryllup-stokmarknes-20-liggende-2.jpg"
 import CouplePhoto from "../img/kroatia-2019.jpg"
 import EngagedPhoto from "../img/forlovelsen-hemsedal-20.jpg"
@@ -33,6 +42,13 @@ const Header = () => (
         <Heading color="white.100" pt="40px" textAlign="center">
           13. August, 2022 | 14.30
         </Heading>
+        <Center>
+          <Link to="/rsvp">
+            <Button mt="40px" colorScheme="pink" variant="solid">
+              RSVP
+            </Button>
+          </Link>
+        </Center>
       </Box>
     </Center>
   </Box>
