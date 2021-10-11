@@ -76,16 +76,13 @@ const OurHistory = () => (
             Vår historie
           </Heading>
           <Text>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
+            Sommeren 2012 møttes Fredrik og Kamilla på fest. Fredrik ble veldig
+            interessert i denne vakre jenta. Ikke visste han at hun overhodet
+            ikke var interessert i han 😂 Men Fredrik ga seg ikke. Han var
+            forelsket, og kunne ikke gi slipp på jenta han forelsket seg i på
+            fest. Det gikk så langt at han påstår at det ikke er forskjell i
+            smak på vafler og pannekaker 🧇🥞- slik at de måtte lage dette
+            sammen. hos han.
           </Text>
         </Box>
       </Box>
