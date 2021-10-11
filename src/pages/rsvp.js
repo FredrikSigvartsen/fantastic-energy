@@ -14,11 +14,7 @@ import {
   Button,
   Center,
   InputRightElement,
-  InputLeftElement,
-  useCheckboxGroup,
 } from "@chakra-ui/react"
-
-import { CheckIcon } from "@chakra-ui/icons"
 
 const allergies = ["Laktose", "Gluten", "Nøtter", "Fisk", "Egg", "Skalldyr"]
 

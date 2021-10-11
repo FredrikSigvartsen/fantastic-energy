@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 
 import { Box, Heading } from "@chakra-ui/react"
-export const Takk = () => {
+const Takk = () => {
   return (
     <Layout>
       <Box h="xl" width="100%">
@@ -13,3 +13,5 @@ export const Takk = () => {
     </Layout>
   )
 }
+
+export default Takk

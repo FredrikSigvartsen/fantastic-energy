@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Flex, Spacer, Text, Button } from "@chakra-ui/react"
+import { Box, Heading, Flex, Spacer, Button } from "@chakra-ui/react"
 import { Link } from "gatsby"
 
 export const Navbar = () => {
@@ -12,7 +12,7 @@ export const Navbar = () => {
       </Box>
       <Spacer />
       <Flex spaceBetween="20px">
-        <Link to="/arrangement/">
+        <Link to="/info/">
           <Button
             mr="3vw"
             textTransform="uppercase"

@@ -1,7 +1,7 @@
 import React from "react"
 
 // 1. import `ChakraProvider` component
-import { ChakraProvider, useDisclosure, ScaleFade } from "@chakra-ui/react"
+import { ChakraProvider, ScaleFade } from "@chakra-ui/react"
 import { Navbar } from "./Navbar"
 import Footer from "./Footer"
 import InsertCode from "./InsertCode"
