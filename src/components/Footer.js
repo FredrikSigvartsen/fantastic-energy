@@ -1,9 +1,19 @@
 import React from "react"
-import { Box, Text } from "@chakra-ui/react"
+import { Box, Center, Heading } from "@chakra-ui/react"
 export const Footer = () => {
   return (
-    <Box w="100%">
-      <Text>13. august 2022</Text>
+    <Box
+      position="absolute"
+      bottom="0"
+      bg="white"
+      w="100%"
+      p="20px"
+      borderTop="1px"
+      borderColor="gray.300"
+    >
+      <Center>
+        <Heading size="md">13. august 2022</Heading>
+      </Center>
     </Box>
   )
 }

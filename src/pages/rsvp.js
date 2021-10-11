@@ -1,5 +1,8 @@
 import React, { useState } from "react"
+import { IconButton } from "@chakra-ui/react"
+import { MinusIcon } from "@chakra-ui/icons"
 import Layout from "../components/Layout"
+
 import {
   Box,
   CheckboxGroup,
@@ -11,31 +14,83 @@ import {
   Button,
   Center,
   InputRightElement,
+  InputLeftElement,
+  useCheckboxGroup,
 } from "@chakra-ui/react"
 
 import { CheckIcon } from "@chakra-ui/icons"
 
-const allergies = ["Laktose", "Gluten", "Nøtter", "Fisk", "Skalldyr", "Egg"]
+const allergies = ["Laktose", "Gluten", "Nøtter", "Fisk", "Egg", "Skalldyr"]
 
 const RSVP = () => {
+  const [someoneHasAllergies, setHasAllergies] = useState(false)
+  const [check, setCheck] = useState({})
+
+  const onSelectedCheckbox = index => {
+    setHasAllergies(true)
+    setCheck(prevState => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }))
+  }
+
   return (
     <Layout>
-      <Box h="xl" width="100%">
+      <Box pb="60rem" h="xl" width="100%">
         <Heading mt="30px" textAlign="center">
           Kommer du?
         </Heading>
         <Center>
-          <Box backgroundColor="pink.100" w="xl" mt="40px" p="20px">
-            <AddParticipants />
+          <Box w="xl" mt="40px" p="20px">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/takk/"
+            >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <label>
+                  Don’t fill this out: <input name="bot-field" />
+                </label>
+              </div>
+              <AddParticipants />
 
-            <Heading>Allergier</Heading>
-            <CheckboxGroup colorScheme="green">
-              <SimpleGrid minChildWidth="50px" spacing="50px">
-                {allergies.map(allergy => (
-                  <Checkbox value={allergy.toLowerCase}>{allergy}</Checkbox>
-                ))}
-              </SimpleGrid>
-            </CheckboxGroup>
+              <Heading mt="30px" mb="10px">
+                Allergier
+              </Heading>
+              <CheckboxGroup>
+                <SimpleGrid mb="20px" minChildWidth="30px" spacing="20px">
+                  {allergies.map((allergy, index) => {
+                    console.log(check[index])
+                    return (
+                      <Checkbox
+                        key={index}
+                        value={allergy.toLowerCase}
+                        onChange={() => onSelectedCheckbox(index)}
+                        isChecked={check[index] || false}
+                      >
+                        {allergy}
+                      </Checkbox>
+                    )
+                  })}
+                </SimpleGrid>
+              </CheckboxGroup>
+              {someoneHasAllergies ? (
+                <Input
+                  type="messsage"
+                  name="allergies_name"
+                  placeholder="Hvem av dere har allergier?"
+                  size="sm"
+                />
+              ) : null}
+
+              <Button mt="20px" colorScheme="green" type="submit">
+                Send inn
+              </Button>
+            </form>
           </Box>
         </Center>
       </Box>
@@ -45,38 +100,54 @@ const RSVP = () => {
 
 const AddParticipants = () => {
   const [participants, setParticipants] = useState([""])
-  const handleChange = (event, index) => {
-    participants[index] = event.target.value
-  }
 
   const handleClick = () => {
-    const neweParticipants = participants
-    neweParticipants.push("")
-    setParticipants(neweParticipants)
+    setParticipants([...participants, ""])
   }
 
-  const isParticipantOnInvitationList = participant => {
-    return true
+  const handleParticipantDeletion = index => {
+    let newParticipants = participants
+    newParticipants.splice(index, 1)
+    setParticipants([...newParticipants])
   }
+
+  const handleChangeParticipantName = (event, index) => {
+    if (!event || !event.target || !event.target.value) return
+    let newParticipants = participants
+    newParticipants[index] = event.target.value
+    setParticipants([...newParticipants])
+  }
+
   return (
     <Box>
       {participants.map((participant, index) => {
         return (
-          <InputGroup>
+          <InputGroup key={index} mb="20px">
             <Input
-              onChange={event => handleChange(event, index)}
+              onChange={event => handleChangeParticipantName(event, index)}
               value={participant}
               placeholder="Navn"
+              type="text"
+              name={`name-${index}`}
             ></Input>
-            {isParticipantOnInvitationList(participant) ? (
-              <InputRightElement
-                children={<CheckIcon color="green" />}
-              ></InputRightElement>
-            ) : null}
+            <InputRightElement
+              children={
+                <IconButton
+                  onClick={() => handleParticipantDeletion(index)}
+                  size="xs"
+                  isRound
+                  bg="transparent"
+                  aria-label="Slett person"
+                  icon={<MinusIcon color="blackAlpha.300" />}
+                />
+              }
+            ></InputRightElement>
           </InputGroup>
         )
       })}
-      <Button onClick={handleClick}>+ Legg til nytt navn</Button>
+      <Button variant="link" onClick={handleClick}>
+        + Legg til nytt navn
+      </Button>
     </Box>
   )
 }
