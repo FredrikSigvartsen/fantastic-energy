@@ -78,11 +78,16 @@ const OurHistory = () => (
           <Text>
             Sommeren 2012 møttes Fredrik og Kamilla på fest. Fredrik ble veldig
             interessert i denne vakre jenta. Ikke visste han at hun overhodet
-            ikke var interessert i han 😂 Men Fredrik ga seg ikke. Han var
+            ikke var interessert i han 😂 Men han ga seg ikke. Han var
             forelsket, og kunne ikke gi slipp på jenta han forelsket seg i på
-            fest. Det gikk så langt at han påstår at det ikke er forskjell i
-            smak på vafler og pannekaker 🧇🥞- slik at de måtte lage dette
-            sammen. hos han.
+            fest. Han gjorde alt for å få hennes oppmerksomhet. Det gikk så
+            langt at han påstod at det ikke er forskjell i smak på vafler og
+            pannekaker 🧇🥞. Kamilla var selvfølgelig uenig i dette. Fredrik
+            foreslo derfor at de måtte møtes og lage dette for å finne fasiten
+            🤷‍♂️ (Kan du holde på en hemmelighet? Fredrik later fremdeles den dag
+            i dag, 9 år senere, som at det er forskjell mellom pannekaker og
+            vafler. Sannheten er selvfølgelig at det fint kan smake det samme.
+            Men ikke fortell dette til Kamilla, da bryllupet kan stå i fare)
           </Text>
         </Box>
       </Box>
@@ -108,15 +113,16 @@ const Engagement = () => (
           Vil du gifte deg med meg?
         </Heading>
         <Text>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
+          8 år etter pannekake-daten, er de på topptur på Ranastongi, i nærheten
+          av Hemsedal. Det var ikke en sky å se, og 25 grader. Det var med andre
+          ord en perfekt dag. Fredrik var mutt på veien opp, og det tydelig at
+          han var litt nervøs for spørsmålet han snart skulle stille. Når de kom
+          til toppen var han veldig nøye med å finne et sted han kunne fri uten
+          tilskuere. Kamilla derimot, som ikke visste noe, var lei av å lete
+          etter den "perfekte plassen for lunsj". Til slutt fant de et sted, med
+          utsikt over Jotunheimen. Etter å ha spist lunsjen, stod han plutselig
+          der. På et kne. Hverken Fredrik eller Kamilla husker hva som ble sagt,
+          men romantisk var det. Og mye kjærlighet. Svaret ble ja ❤️
         </Text>
       </Box>
     </Center>
