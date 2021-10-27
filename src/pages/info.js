@@ -1,7 +1,8 @@
 import React from "react"
-import { Heading, Grid, Box, Text, TimeIcon } from "@chakra-ui/layout"
+import { Heading, Grid, Box, Text, Icon } from "@chakra-ui/layout"
+import { TimeIcon } from "@chakra-ui/icons"
 import Layout from "../components/Layout"
-import { BiChurch } from "react-icons/bi"
+// import { BiChurch } from "react-icons/bi"
 
 const Info = () => {
   return (
@@ -9,12 +10,12 @@ const Info = () => {
       <Box p="20px">
         <Heading>Arrangement info</Heading>
         <Grid templateColumns="repeat(auto-fit, minmax(320px,1fr))" gap={10}>
-          <IconBox title={Dato} Icon={<TimeIcon />}>
+          <IconBox title="Dato" Icon={<TimeIcon />}>
             <Text>13. August</Text>
           </IconBox>
-          <IconBox title={Dato} Icon={<TimeIcon />}>
-            <Text>Kirke</Text>
-          </IconBox>
+          {/* <IconBox title="Kirke" Icon={<Icon as={BiChurch} />}>
+            <Text>Enebakk kirke</Text>
+          </IconBox> */}
           <Box w="100%" h="10" bg="blue.500">
             Fest
           </Box>
