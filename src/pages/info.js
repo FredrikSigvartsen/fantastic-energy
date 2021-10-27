@@ -1,13 +1,37 @@
 import React from "react"
-import { Heading } from "@chakra-ui/layout"
+import { Heading, Grid, Box, Text, TimeIcon } from "@chakra-ui/layout"
 import Layout from "../components/Layout"
+import { BiChurch } from "react-icons/bi"
 
 const Info = () => {
   return (
     <Layout>
-      <Heading>Arrangement info</Heading>
+      <Box p="20px">
+        <Heading>Arrangement info</Heading>
+        <Grid templateColumns="repeat(auto-fit, minmax(320px,1fr))" gap={10}>
+          <IconBox title={Dato} Icon={<TimeIcon />}>
+            <Text>13. August</Text>
+          </IconBox>
+          <IconBox title={Dato} Icon={<TimeIcon />}>
+            <Text>Kirke</Text>
+          </IconBox>
+          <Box w="100%" h="10" bg="blue.500">
+            Fest
+          </Box>
+        </Grid>
+      </Box>
     </Layout>
   )
 }
+
+const IconBox = ({ children, title, Icon }) => (
+  <Box w="100%" h="10" bg="blue.500">
+    {Icon}
+    <Heading size="sm" as="h3">
+      Dato
+    </Heading>
+    {children}
+  </Box>
+)
 
 export default Info
