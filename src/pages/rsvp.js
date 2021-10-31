@@ -20,8 +20,12 @@ const allergies = ["Laktose", "Gluten", "Nøtter", "Fisk", "Egg", "Skalldyr"]
 
 const RSVP = () => {
   const [someoneHasAllergies, setHasAllergies] = useState(false)
-  const [check, setCheck] = useState({})
-
+  const [participants, setParticipants] = useState([])
+  const [formValues, setFormValues] = useState({
+    name: "",
+    message: "",
+    allergies_name: "",
+  })
   const onSelectedCheckbox = index => {
     setHasAllergies(true)
     setCheck(prevState => ({
@@ -29,6 +33,13 @@ const RSVP = () => {
       [index]: !prevState[index],
     }))
   }
+
+  const onParticipantChange = participants => {
+    setParticipants(participants)
+  }
+
+  const handleChange = e =>
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
 
   return (
     <Layout>
@@ -52,7 +63,7 @@ const RSVP = () => {
                   Don’t fill this out: <input name="bot-field" />
                 </label>
               </div>
-              <AddParticipants />
+              <AddParticipants onChangeParticipants={onParticipantChange} />
 
               <Heading mt="30px" mb="10px">
                 Allergier
@@ -64,8 +75,9 @@ const RSVP = () => {
                     return (
                       <Checkbox
                         key={index}
+                        name={allergy}
                         value={allergy.toLowerCase}
-                        onChange={() => onSelectedCheckbox(index)}
+                        onChange={handleChange}
                         isChecked={check[index] || false}
                       >
                         {allergy}
@@ -79,6 +91,7 @@ const RSVP = () => {
                   type="messsage"
                   name="allergies_name"
                   placeholder="Hvem av dere har allergier?"
+                  onChange={handleChange}
                   size="sm"
                 />
               ) : null}
@@ -94,8 +107,12 @@ const RSVP = () => {
   )
 }
 
-const AddParticipants = () => {
+const AddParticipants = ({ onChangeParticipants }) => {
   const [participants, setParticipants] = useState([""])
+
+  useEffect(() => {
+    onChangeParticipants(participants)
+  }, [participants])
 
   const handleClick = () => {
     setParticipants([...participants, ""])
