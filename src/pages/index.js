@@ -21,7 +21,7 @@ const Header = () => (
     backgroundImage={RomanticImage}
     backgroundSize="cover"
     backgroundRepeat="no-repeat"
-    backgroundPosition="center center"
+    backgroundPosition="bottom center"
   >
     <Center height="100%">
       <Box color="white">

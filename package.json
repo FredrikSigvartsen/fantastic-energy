@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@fontsource/cinzel": "^4.5.0",
@@ -24,7 +24,9 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.13.0",
     "gatsby-cli": "^4.0.0",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
+    "react-add-to-calendar-hoc": "^1.0.10",
     "react-autosuggest": "^10.1.0",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
