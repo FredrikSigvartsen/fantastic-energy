@@ -14,6 +14,8 @@ import RomanticImage from "../img/bryllup-stokmarknes-20-liggende-2.jpg"
 import CouplePhoto from "../img/kroatia-2019.jpg"
 import EngagedPhoto from "../img/forlovelsen-hemsedal-20.jpg"
 import theme from "../theme"
+
+const responsivePadding = ["5px", "10px", "5rem"]
 const Header = () => (
   <Box
     width="100vw"
@@ -56,13 +58,9 @@ const Header = () => (
 
 const OurHistory = () => (
   <Box width="100vw" height="100%">
-    <SimpleGrid
-      minChildWidth="320px"
-      spacing="40px"
-      px={theme.sizes.pagePadding}
-    >
+    <SimpleGrid minChildWidth="320px" spacing="40px" px={responsivePadding}>
       <Box width="100%">
-        <Box p="5rem">
+        <Box p={responsivePadding}>
           <Heading
             fontStyle="italic"
             textTransform="lowercase"
@@ -91,7 +89,7 @@ const OurHistory = () => (
           </Text>
         </Box>
       </Box>
-      <Box p="5rem">
+      <Box p={responsivePadding}>
         <Image
           height="400px"
           alt="Fredrik og Kamilla i Kroatia"
@@ -103,13 +101,13 @@ const OurHistory = () => (
 )
 
 const Engagement = () => (
-  <Box p="5rem" pt="10rem">
+  <Box p={responsivePadding} pt={["50px", "10rem"]}>
     <Center>
-      <Box width="50vw" mb="5rem">
+      <Box px={["5px", 0]} width={["100%", "50vw"]} mb={responsivePadding}>
         <Heading pb="10px" textAlign="center" size="sm">
           når Fredrik fridde til Kamilla
         </Heading>
-        <Heading size="2xl" pb="20px" textAlign="center" h2>
+        <Heading size="2xl" pb={["10px", "20px"]} textAlign="center" h2>
           Vil du gifte deg med meg?
         </Heading>
         <Text>
@@ -129,7 +127,7 @@ const Engagement = () => (
     <Box>
       <Center>
         <Image
-          height="600px"
+          height={["400px", "600px"]}
           src={EngagedPhoto}
           alt="Kamilla med forlovelsesring"
         />

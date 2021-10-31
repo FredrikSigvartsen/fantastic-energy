@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Box, Flex, Link as ChakraLink, Stack, Text } from "@chakra-ui/react"
-import { MenuToggle } from "./Navigation/MenuToggle"
-import { Logo } from "./Navigation/Logo"
+import { MenuToggle } from "./MenuToggle"
+import { Logo } from "./Logo"
 import { Link } from "gatsby"
 
 export const Navbar = ({ props }) => {
