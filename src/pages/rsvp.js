@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { IconButton } from "@chakra-ui/react"
 import { MinusIcon } from "@chakra-ui/icons"
 import Layout from "../components/Layout"
+import { navigate } from "gatsby-link"
 
 import {
   Box,
@@ -16,22 +17,41 @@ import {
   InputRightElement,
 } from "@chakra-ui/react"
 
-const allergies = ["Laktose", "Gluten", "Nøtter", "Fisk", "Egg", "Skalldyr"]
+const allergies = [
+  { name: "laktose", display: "Laktose" },
+  { name: "gluten", display: "Gluten" },
+  { name: "nuts", display: "Nøtter" },
+  { name: "fisk", display: "Fisk" },
+  { name: "egg", display: "Egg" },
+  { name: "skalldyr", display: "Skalldyr" },
+]
 
 const RSVP = () => {
   const [someoneHasAllergies, setHasAllergies] = useState(false)
   const [participants, setParticipants] = useState([])
   const [formValues, setFormValues] = useState({
-    name: "",
-    message: "",
     allergies_name: "",
   })
-  const onSelectedCheckbox = index => {
-    setHasAllergies(true)
-    setCheck(prevState => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }))
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+        ...formValues,
+        ...participants,
+      }),
+    })
+      .then(() => navigate("/takk/"))
+      .catch(error => alert(error))
   }
 
   const onParticipantChange = participants => {
@@ -40,6 +60,11 @@ const RSVP = () => {
 
   const handleChange = e =>
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
+
+  const onCheckChange = e => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    setHasAllergies(true)
+  }
 
   return (
     <Layout>
@@ -55,6 +80,7 @@ const RSVP = () => {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               action="/takk/"
+              onSubmit={handleSubmit}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
               <input type="hidden" name="form-name" value="contact" />
@@ -71,16 +97,16 @@ const RSVP = () => {
               <CheckboxGroup>
                 <SimpleGrid mb="20px" minChildWidth="30px" spacing="20px">
                   {allergies.map((allergy, index) => {
-                    console.log(check[index])
                     return (
                       <Checkbox
                         key={index}
-                        name={allergy}
-                        value={allergy.toLowerCase}
-                        onChange={handleChange}
-                        isChecked={check[index] || false}
+                        name={allergy.name.toLowerCase()}
+                        value={allergy.name.toLowerCase()}
+                        onChange={onCheckChange}
+                        isChecked={formValues[allergy.name] || false}
+                        checked={formValues[allergy.name] || false}
                       >
-                        {allergy}
+                        {allergy.display}
                       </Checkbox>
                     )
                   })}
