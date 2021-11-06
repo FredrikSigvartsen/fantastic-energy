@@ -1,5 +1,5 @@
 import React from "react"
-
+import "./all.css"
 // 1. import `ChakraProvider` component
 import { ChakraProvider, ScaleFade } from "@chakra-ui/react"
 import { Navbar } from "./Navbar"
