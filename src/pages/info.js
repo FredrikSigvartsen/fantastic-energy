@@ -213,7 +213,12 @@ const HighLightedInfo = ({ title, higlightedList, children }) => (
     </Heading>
     <VStack spacing={5} align="stretch">
       {higlightedList.map(({ Icon, title, info }) => (
-        <HighlightedListItem icon={Icon} title={title} info={info} />
+        <HighlightedListItem
+          key={title}
+          icon={Icon}
+          title={title}
+          info={info}
+        />
       ))}
     </VStack>
     <Box mt={["1rem", "2rem"]}>{children}</Box>
@@ -245,6 +250,13 @@ const Info = () => {
         <Highlights />
         <AdditionalInfo />
         <Toastmaster />
+        <Box py={["1rem", "3rem"]}>
+          <Center>
+            <Text maxWidth="700px" fontSize="2xl">
+              Forlovere og brudesvenn/brudepiker annonnseres etterhvert
+            </Text>
+          </Center>
+        </Box>
       </Box>
     </Layout>
   )

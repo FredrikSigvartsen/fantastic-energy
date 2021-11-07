@@ -63,7 +63,13 @@ export const ProfileCard = ({
         <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
           {badges.map(badge => {
             return (
-              <Badge px={2} py={1} bg={badgeBgColor} fontWeight={"400"}>
+              <Badge
+                key={badge}
+                px={2}
+                py={1}
+                bg={badgeBgColor}
+                fontWeight={"400"}
+              >
                 #{badge}
               </Badge>
             )
