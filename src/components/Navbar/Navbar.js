@@ -48,7 +48,7 @@ const MenuLinks = ({ isOpen }) => (
       pt={[4, 4, 0, 0]}
     >
       <MenuItem>Hjem</MenuItem>
-      <MenuItem to="/info/">Arrangement</MenuItem>
+      <MenuItem to="/info/">Praktisk info</MenuItem>
       <MenuItem to="/rsvp/">RSVP</MenuItem>
     </Stack>
   </Box>
@@ -61,6 +61,8 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
         colorScheme="green"
         textTransform="uppercase"
         display="block"
+        fontWeight="bold"
+        letterSpacing="1.5px"
         {...rest}
       >
         {children}

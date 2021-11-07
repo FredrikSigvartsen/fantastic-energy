@@ -129,11 +129,11 @@ const partyInfo = [
 const AdditionalInfo = () => (
   <Box p={["5px", "2rem"]}>
     <Center>
-      <Box>
+      <Box mb="30px" px={["15px"]}>
         <Heading mb="10px" textAlign="center">
           Praktisk informasjon
         </Heading>
-        <Box w={["100%", "80vh", "80vh"]}>
+        <Box maxW="700px">
           <Text>
             Her finner du praktisk informasjon om dagen. Ettersom bryllupet er
             en stor dag for oss har vi invitert de personene som betyr mest for
@@ -151,8 +151,8 @@ const AdditionalInfo = () => (
       </Box>
     </Center>
     <Grid
-      templateColumns="repeat(auto-fit, minmax(320px,1fr))"
-      spacing={[2, 10]}
+      templateColumns={["1fr", "repeat(auto-fit, minmax(450px,1fr))"]}
+      gap={[2, 10]}
     >
       <HighLightedInfo higlightedList={churchInfo} title="Vielsen">
         <Text>
@@ -183,7 +183,7 @@ const IconBox = ({ children, title, Icon }) => (
     w="100%"
     p="20px"
     bg="pink.100"
-    boxShadow="0px 12px 24px -2px rgba(197, 144, 109, 1)"
+    boxShadow={["none", "0px 12px 24px -2px rgba(197, 144, 109, 1)"]}
   >
     <Center>
       <Box textAlign="center">
@@ -199,10 +199,10 @@ const IconBox = ({ children, title, Icon }) => (
 
 const HighLightedInfo = ({ title, higlightedList, children }) => (
   <Box
-    my={["10px", "30px"]}
+    mb={["10px", "15px"]}
     bg="pink.100"
     width="100%"
-    boxShadow="0px 12px 24px -2px rgba(197, 144, 109, 1)"
+    boxShadow={["none", "0px 12px 24px -2px rgba(197, 144, 109, 1)"]}
     borderWidth="1px"
     p={5}
   >
@@ -227,7 +227,11 @@ const HighlightedListItem = ({ icon, title, info }) => (
       </Box>
       <Spacer />
 
-      <Box>{info}</Box>
+      <Box>
+        <Text textAlign="right" maxW="200px">
+          {info}
+        </Text>
+      </Box>
     </Flex>
   </Box>
 )
