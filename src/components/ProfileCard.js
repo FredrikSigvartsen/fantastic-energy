@@ -1,3 +1,5 @@
+import React from "react"
+
 import {
   Heading,
   Avatar,
@@ -11,7 +13,21 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 
-export const ProfileCard = ({ imageUrl, name, title, description }) => {
+import { ImFacebook2, ImLinkedin } from "react-icons/im"
+import { FiMail } from "react-icons/fi"
+
+export const ProfileCard = ({
+  imageUrl,
+  imageAlt,
+  name,
+  title,
+  children,
+  facebookUrl,
+  linkedInUrl,
+  mail,
+  badges,
+}) => {
+  const badgeBgColor = useColorModeValue("gray.50", "gray.800")
   return (
     <Center py={6}>
       <Box
@@ -26,7 +42,7 @@ export const ProfileCard = ({ imageUrl, name, title, description }) => {
         <Avatar
           size={"xl"}
           src={imageUrl}
-          alt={"Avatar Alt"}
+          alt={imageAlt}
           mb={4}
           pos={"relative"}
         />
@@ -45,38 +61,34 @@ export const ProfileCard = ({ imageUrl, name, title, description }) => {
         </Text>
 
         <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
-          Facebook, Instagram, Snapchat, LinkedIn
+          {badges.map(badge => {
+            return (
+              <Badge px={2} py={1} bg={badgeBgColor} fontWeight={"400"}>
+                #{badge}
+              </Badge>
+            )
+          })}
         </Stack>
 
-        <Stack mt={8} direction={"row"} spacing={4}>
-          <Button
-            flex={1}
-            fontSize={"sm"}
-            rounded={"full"}
-            _focus={{
-              bg: "gray.200",
-            }}
-          >
-            Message
-          </Button>
-          <Button
-            flex={1}
-            fontSize={"sm"}
-            rounded={"full"}
-            bg={"blue.400"}
-            color={"white"}
-            boxShadow={
-              "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-            }
-            _hover={{
-              bg: "blue.500",
-            }}
-            _focus={{
-              bg: "blue.500",
-            }}
-          >
-            Follow
-          </Button>
+        <Stack
+          mt={8}
+          direction={"row"}
+          spacing={10}
+          alignItems="center"
+          justifyItems="center"
+          justifyContent="center"
+        >
+          <Link isExternal href={facebookUrl}>
+            <ImFacebook2 />
+          </Link>
+
+          <Link href={`mailto:${mail}`}>
+            <FiMail />
+          </Link>
+
+          <Link isExternal href={linkedInUrl}>
+            <ImLinkedin />
+          </Link>
         </Stack>
       </Box>
     </Center>

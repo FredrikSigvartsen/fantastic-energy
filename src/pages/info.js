@@ -21,6 +21,8 @@ import { Button } from "@chakra-ui/button"
 import { ImLocation } from "react-icons/im"
 import { FaParking } from "react-icons/fa"
 import { TiWine } from "react-icons/ti"
+import { ProfileCard } from "../components/ProfileCard"
+import SimenProfile from "../img/toastmaster-simen.jpg"
 
 const ChurchIcon = () => (
   <IconContext.Provider
@@ -242,9 +244,42 @@ const Info = () => {
       <Box>
         <Highlights />
         <AdditionalInfo />
+        <Toastmaster />
       </Box>
     </Layout>
   )
 }
+
+const Toastmaster = () => (
+  <Box bg="green.900" py="2rem">
+    <Grid templateColumns={["1fr", "1fr 1fr"]}>
+      <Box p={("15px", "4rem")} color="whiteAlpha.900">
+        <Center>
+          <Box>
+            <Heading mb={["1rem", "2rem"]} size="3xl">
+              Toastmaster
+            </Heading>
+            <Text fontSize="xl">
+              Ønsker du å sette opp på talelisten? Eller lurer du på noe? Ta kan
+              du ta kontakt med Simen Stubsjøen som er Toastmaster for kvelden.
+            </Text>
+          </Box>
+        </Center>
+      </Box>
+      <ProfileCard
+        imageUrl={SimenProfile}
+        imageAlt="Simen Stubsjøen"
+        name="Simen Stubsjøen"
+        title="God venn av brudeparet"
+        facebookUrl="https://www.facebook.com/Simen.K.Stubsjoen"
+        linkedInUrl="https://www.linkedin.com/in/simen-stubsjoen/"
+        mail="skstubsjoen@gmail.com"
+        badges={["varm", "morsom", "kompis"]}
+      >
+        Telefon: 976 62 058
+      </ProfileCard>
+    </Grid>
+  </Box>
+)
 
 export default Info
