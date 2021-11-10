@@ -83,17 +83,17 @@ const OurHistory = () => (
           </Heading>
           <Text>
             Sommeren 2012 møttes Fredrik og Kamilla på fest. Fredrik ble veldig
-            interessert i denne vakre jenta. Ikke visste han at hun overhodet
-            ikke var interessert i han 😂 Men han ga seg ikke. Han var
-            forelsket, og kunne ikke gi slipp på jenta han forelsket seg i på
-            fest. Han gjorde alt for å få hennes oppmerksomhet. Det gikk så
-            langt at han påstod at det ikke er forskjell i smak på vafler og
-            pannekaker 🧇🥞. Kamilla var selvfølgelig uenig i dette. Fredrik
-            foreslo derfor at de måtte møtes og lage dette for å finne fasiten
-            🤷‍♂️ (Kan du holde på en hemmelighet? Fredrik later fremdeles den dag
-            i dag, 9 år senere, som at det er forskjell mellom pannekaker og
-            vafler. Sannheten er selvfølgelig at det fint kan smake det samme.
-            Men ikke fortell dette til Kamilla, da bryllupet kan stå i fare)
+            interessert i denne vakre jenta, ikke visste han at hun overhodet
+            ikke var interessert i han 😂 Men han ga seg ikke. Han var betatt,
+            og kunne ikke gi slipp på jenta han forelsket seg i på en fest. Han
+            gjorde alt for å få hennes oppmerksomhet, det gikk så langt at han
+            påstod at det ikke var forskjell på smak mellom vafler og pannekaker
+            🧇🥞. Kamilla var selvfølgelig uenig i dette. Fredrik foreslo derfor
+            at de måtte møtes for å finne fasiten🤷‍♂️ (Kan du holde på en
+            hemmelighet? Fredrik later fremdeles den dag i dag, 9 år senere, som
+            at det er forskjell på smak mellom pannekaker og vafler. Sannheten
+            er selvfølgelig at Fredrik smaker forskjell, men ikke fortell dette
+            til Kamilla, da kan bryllupet stå i fare)
           </Text>
         </Box>
       </Box>
@@ -120,15 +120,16 @@ const Engagement = () => (
         </Heading>
         <Text>
           8 år etter pannekake-daten, er de på topptur på Ranastongi, i nærheten
-          av Hemsedal. Det var ikke en sky å se, og 25 grader. Det var med andre
-          ord en perfekt dag. Fredrik var mutt på veien opp, og det tydelig at
-          han var litt nervøs for spørsmålet han snart skulle stille. Når de kom
-          til toppen var han veldig nøye med å finne et sted han kunne fri uten
-          tilskuere. Kamilla derimot, som ikke visste noe, var lei av å lete
-          etter den "perfekte plassen for lunsj". Til slutt fant de et sted, med
-          utsikt over Jotunheimen. Etter å ha spist lunsjen, stod han plutselig
-          der. På et kne. Hverken Fredrik eller Kamilla husker hva som ble sagt,
-          men romantisk var det. Og mye kjærlighet. Svaret ble ja ❤️
+          av Hemsedal. Det var ikke en sky å se og 25 grader, det var med andre
+          ord en perfekt dag. Fredrik var stille på veien opp og det var tydelig
+          at han var litt nervøs for spørsmålet han snart skulle stille. Når de
+          kom til toppen var han veldig nøye med å finne et sted han kunne fri
+          uten tilskuere. Kamilla derimot, som ikke visste noe, var lei av å
+          lete etter den "perfekte plassen for lunsj". Etter mye om og men fant
+          de til slutt et sted, med utsikt over Jotunheimen. Etter å ha spist
+          lunsjen, stod han plutselig der, på et kne. Hverken Fredrik eller
+          Kamilla husker hva som ble sagt, men romantisk var det og mye
+          kjærlighet. Svaret ble ja ❤️
         </Text>
       </Box>
     </Center>
