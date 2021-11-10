@@ -122,7 +122,7 @@ const RSVP = () => {
                 />
               ) : null}
 
-              <Button mt="20px" colorScheme="green" type="submit">
+              <Button mt="20px" colorScheme="pink" type="submit">
                 Send inn
               </Button>
             </form>

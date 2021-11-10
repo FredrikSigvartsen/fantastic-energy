@@ -6,8 +6,8 @@ const Takk = () => {
   return (
     <Layout>
       <Box h="xl" width="100%">
-        <Heading mt="30px" textAlign="center">
-          Tusen takk for ditt svar. Vi gleder oss veldig til å se deg!
+        <Heading mt={("30px", "3rem")} textAlign="center">
+          Vi gleder oss veldig til å se deg!
         </Heading>
       </Box>
     </Layout>

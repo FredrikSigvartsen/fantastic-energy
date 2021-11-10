@@ -44,7 +44,7 @@ const Highlights = () => {
   const weddingDate = moment(new Date(Date.UTC(2022, 8, 13, 14, 30)))
   weddingDate.locale("nb")
   return (
-    <Box p="20px">
+    <Box mt={["20px"]} p="20px">
       <Grid templateColumns="repeat(auto-fit, minmax(200px,1fr))" gap={10}>
         <IconBox title="Dato" Icon={<TimeIcon boxSize="30px" />}>
           <Text>13. August kl. 14.30</Text>
@@ -164,7 +164,7 @@ const AdditionalInfo = () => (
       </HighLightedInfo>
       <HighLightedInfo higlightedList={partyInfo} title="Selskapet">
         <Text>
-          Selskapet er lagt til Ignarbakke Kulturhus. Fra kirken er det ca. 4
+          Selskapet er lagt til Ignarbakke Kulturhus. Fra kirken er det 6
           minutters gange. Lokalet åpnes for gjester etter vielsen, slik at de
           som ønsker kan oppholde seg der mens brudeparet fotograferes. Dere vil
           bli tatt imot av toastmaster, og det vil etterhvert bli servert bobler
@@ -184,8 +184,12 @@ const IconBox = ({ children, title, Icon }) => (
   <Box
     w="100%"
     p="20px"
-    bg="pink.100"
-    boxShadow={["none", "0px 12px 24px -2px rgba(197, 144, 109, 1)"]}
+    borderRadius={["4px"]}
+    bg={["pink.400", "pink.100", "pink.400", "pink.100", "whiteAlpha.100"]}
+    boxShadow={[
+      "0px 12px 24px -2px rgba(197, 144, 109, 1)",
+      "20px 20px 60px #b5b5b5, -20px -20px 60px #ffffff",
+    ]}
   >
     <Center>
       <Box textAlign="center">
@@ -265,15 +269,16 @@ const Info = () => {
 const Toastmaster = () => (
   <Box bg="green.900" py="2rem">
     <Grid templateColumns={["1fr", "1fr 1fr"]}>
-      <Box p={("15px", "4rem")} color="whiteAlpha.900">
+      <Box p={["15px", "4rem"]} color="whiteAlpha.900">
         <Center>
           <Box>
-            <Heading mb={["1rem", "2rem"]} size="3xl">
+            <Heading mb={["1rem", "2rem"]} fontSize={["3xl", "4xl"]}>
               Toastmaster
             </Heading>
-            <Text fontSize="xl">
-              Ønsker du å sette opp på talelisten? Eller lurer du på noe? Ta kan
-              du ta kontakt med Simen Stubsjøen som er Toastmaster for kvelden.
+            <Text fontSize="lg">
+              Ønsker du å settes opp på talelisten? Eller lurer du på noe? Da
+              kan du ta kontakt med Simen Stubsjøen som er toastmaster for
+              kvelden.
             </Text>
           </Box>
         </Center>

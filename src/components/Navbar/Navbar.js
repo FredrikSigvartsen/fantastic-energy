@@ -10,7 +10,7 @@ export const Navbar = ({ props }) => {
   const toggle = () => setIsOpen(!isOpen)
   return (
     <NavBarContainer {...props}>
-      <Logo w="150px" color={["white", "white", "green.500", "green.500"]} />
+      <Logo w="170px" color={["green.700"]} />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
@@ -26,8 +26,8 @@ const NavBarContainer = ({ children, ...props }) => {
       wrap="wrap"
       w="100%"
       p={8}
-      bg={["green.500", "green.500", "transparent", "transparent"]}
-      color={["white", "white", "green.700", "green.700"]}
+      bg={["pink.100"]}
+      color={["green.700"]}
       {...props}
     >
       {children}

@@ -19,34 +19,42 @@ const responsivePadding = ["5px", "10px", "5rem"]
 const Header = () => (
   <Box
     width="100vw"
-    height="80vh"
+    height={["70vh", "80vh"]}
     backgroundImage={RomanticImage}
-    backgroundSize="cover"
+    backgroundSize={["cover"]}
     backgroundRepeat="no-repeat"
-    backgroundPosition="bottom center"
+    backgroundPosition={["25% center", "bottom center"]}
   >
     <Center height="100%">
       <Box color="white">
-        <Heading color="white.100" size="3xl" h1>
+        <Heading
+          textAlign="center"
+          color="white.100"
+          fontSize={["3xl", "5xl"]}
+          h1
+        >
           Fredrik & Kamilla
         </Heading>
         <Heading
           color="white.100"
-          p
-          pt="40px"
+          pt="30px"
           size="md"
-          fontWeight="300"
           textAlign="center"
           textTransform="uppercase"
         >
           gifter seg
         </Heading>
-        <Heading color="white.100" pt="40px" textAlign="center">
-          13. August, 2022 | 14.30
+        <Heading
+          fontSize={["3xl", "5xl"]}
+          color="white.100"
+          pt="30px"
+          textAlign="center"
+        >
+          13. August, 2022
         </Heading>
         <Center>
           <Link to="/rsvp">
-            <Button mt="40px" colorScheme="pink" variant="solid">
+            <Button mt="30px" colorScheme="pink" variant="solid">
               RSVP
             </Button>
           </Link>
@@ -64,7 +72,7 @@ const OurHistory = () => (
           <Heading
             fontStyle="italic"
             textTransform="lowercase"
-            p
+            mt={["10px"]}
             pb="10px"
             size="sm"
           >
