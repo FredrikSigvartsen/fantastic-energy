@@ -256,7 +256,12 @@ const Info = () => {
         <Toastmaster />
         <Box py={["1rem", "3rem"]}>
           <Center>
-            <Text maxWidth="700px" fontSize="2xl">
+            <Text
+              textAlign="center"
+              px={["1rem"]}
+              maxWidth="700px"
+              fontSize="2xl"
+            >
               Forlovere og brudesvenn/brudepiker annonnseres etterhvert
             </Text>
           </Center>
