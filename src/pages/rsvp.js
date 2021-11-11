@@ -8,7 +8,7 @@ import {
   Box,
   CheckboxGroup,
   Checkbox,
-  SimpleGrid,
+  Grid,
   Input,
   InputGroup,
   Heading,
@@ -95,7 +95,13 @@ const RSVP = () => {
                 Allergier
               </Heading>
               <CheckboxGroup>
-                <SimpleGrid mb="20px" minChildWidth="30px" spacing="20px">
+                <Grid
+                  templateColumns={["repeat(auto-fit, minmax(70px,1fr))"]}
+                  gap={3}
+                  mb="20px"
+                  minChildWidth="30px"
+                  spacing="20px"
+                >
                   {allergies.map((allergy, index) => {
                     return (
                       <Checkbox
@@ -110,7 +116,7 @@ const RSVP = () => {
                       </Checkbox>
                     )
                   })}
-                </SimpleGrid>
+                </Grid>
               </CheckboxGroup>
               {someoneHasAllergies ? (
                 <Input
