@@ -24,6 +24,7 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.13.0",
     "gatsby-cli": "^4.0.0",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-add-to-calendar-hoc": "^1.0.10",

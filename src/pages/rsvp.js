@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { IconButton } from "@chakra-ui/react"
+import _ from "lodash"
 import { MinusIcon } from "@chakra-ui/icons"
 import Layout from "../components/Layout"
 import { navigate } from "gatsby-link"
@@ -29,7 +30,7 @@ const allergies = [
 const RSVP = () => {
   const [someoneHasAllergies, setHasAllergies] = useState(false)
   const [participants, setParticipants] = useState([])
-  const [formValues, setFormValues] = useState({})
+  const [formValues, setFormValues] = useState({ allergies_name: "" })
 
   function encode(data) {
     return Object.keys(data)
@@ -44,8 +45,9 @@ const RSVP = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": event.target.getAttribute("name"),
+        participants: _.toString(participants),
+        allergies: formValues.allergies_name,
         ...formValues,
-        ...participants,
       }),
     })
       .then(() => navigate("/takk/"))
@@ -53,6 +55,7 @@ const RSVP = () => {
   }
 
   const onParticipantChange = participants => {
+    console.log(...participants)
     setParticipants(participants)
   }
 
