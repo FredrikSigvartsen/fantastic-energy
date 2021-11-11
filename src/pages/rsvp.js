@@ -29,9 +29,7 @@ const allergies = [
 const RSVP = () => {
   const [someoneHasAllergies, setHasAllergies] = useState(false)
   const [participants, setParticipants] = useState([])
-  const [formValues, setFormValues] = useState({
-    allergies_name: "",
-  })
+  const [formValues, setFormValues] = useState({})
 
   function encode(data) {
     return Object.keys(data)
@@ -58,8 +56,9 @@ const RSVP = () => {
     setParticipants(participants)
   }
 
-  const handleChange = e =>
+  const handleChange = e => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
 
   const onCheckChange = (name, value) => {
     setFormValues({ ...formValues, [name]: value })
@@ -143,7 +142,7 @@ const AddParticipants = ({ onChangeParticipants }) => {
   const [participants, setParticipants] = useState([""])
 
   useEffect(() => {
-    onChangeParticipants(participants)
+    onChangeParticipants(participants) // eslint-disable-next-line
   }, [participants])
 
   const handleClick = () => {

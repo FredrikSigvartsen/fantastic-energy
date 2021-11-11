@@ -17,7 +17,6 @@ import { IconContext } from "react-icons"
 import { BiChurch, BiDrink } from "react-icons/bi"
 
 import { GiPartyPopper, GiKnifeFork } from "react-icons/gi"
-import { Button } from "@chakra-ui/button"
 import { ImLocation } from "react-icons/im"
 import { FaParking } from "react-icons/fa"
 import { TiWine } from "react-icons/ti"

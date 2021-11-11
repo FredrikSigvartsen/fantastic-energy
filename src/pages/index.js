@@ -13,7 +13,6 @@ import {
 import RomanticImage from "../img/bryllup-stokmarknes-20-liggende-2.jpg"
 import CouplePhoto from "../img/kroatia-2019.jpg"
 import EngagedPhoto from "../img/forlovelsen-hemsedal-20.jpg"
-import theme from "../theme"
 
 const responsivePadding = ["5px", "10px", "5rem"]
 const Header = () => (
