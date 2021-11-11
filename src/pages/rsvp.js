@@ -39,14 +39,20 @@ const RSVP = () => {
   }
 
   const handleSubmit = event => {
+    console.log(
+      encode({
+        "form-name": `Svar ${participants[0]}`,
+        participants: _.toString(participants),
+        ...formValues,
+      })
+    )
     event.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": event.target.getAttribute("name"),
+        "form-name": `Svar ${participants[0]}`,
         participants: _.toString(participants),
-        allergies: formValues.allergies_name,
         ...formValues,
       }),
     })
