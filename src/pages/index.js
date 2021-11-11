@@ -147,7 +147,7 @@ const Engagement = () => (
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="Hjem">
       <Header />
       <OurHistory />
       <Engagement />

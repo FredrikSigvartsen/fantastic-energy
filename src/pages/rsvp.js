@@ -67,7 +67,7 @@ const RSVP = () => {
   }
 
   return (
-    <Layout>
+    <Layout title="Kontakt">
       <Box pb="60rem" h="xl" width="100%">
         <Heading mt="30px" textAlign="center">
           Kommer du?

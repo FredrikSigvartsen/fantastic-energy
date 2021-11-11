@@ -249,7 +249,7 @@ const HighlightedListItem = ({ icon, title, info }) => (
 
 const Info = () => {
   return (
-    <Layout>
+    <Layout title="Praktisk info">
       <Box>
         <Highlights />
         <AdditionalInfo />
