@@ -39,19 +39,12 @@ const RSVP = () => {
   }
 
   const handleSubmit = event => {
-    console.log(
-      encode({
-        "form-name": `Svar ${participants[0]}`,
-        participants: _.toString(participants),
-        ...formValues,
-      })
-    )
     event.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": `rsvp`,
+        "form-name": event.target.getAttribute("name"),
         participants: _.toString(participants),
         ...formValues,
       }),
@@ -91,7 +84,7 @@ const RSVP = () => {
               onSubmit={handleSubmit}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="rsvp" />
               <div hidden>
                 <label>
                   Don’t fill this out: <input name="bot-field" />
