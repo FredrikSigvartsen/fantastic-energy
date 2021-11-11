@@ -61,8 +61,8 @@ const RSVP = () => {
   const handleChange = e =>
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
 
-  const onCheckChange = e => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  const onCheckChange = (name, value) => {
+    setFormValues({ ...formValues, [name]: value })
     setHasAllergies(true)
   }
 
@@ -99,8 +99,6 @@ const RSVP = () => {
                   templateColumns={["repeat(auto-fit, minmax(70px,1fr))"]}
                   gap={3}
                   mb="20px"
-                  minChildWidth="30px"
-                  spacing="20px"
                 >
                   {allergies.map((allergy, index) => {
                     return (
@@ -108,7 +106,9 @@ const RSVP = () => {
                         key={index}
                         name={allergy.name.toLowerCase()}
                         value={allergy.name.toLowerCase()}
-                        onChange={onCheckChange}
+                        onChange={e =>
+                          onCheckChange(allergy.name, !formValues[allergy.name])
+                        }
                         isChecked={formValues[allergy.name] || false}
                         checked={formValues[allergy.name] || false}
                       >
