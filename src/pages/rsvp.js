@@ -83,7 +83,7 @@ const RSVP = () => {
         <Center>
           <Box w="xl" mt="40px" p="20px">
             <form
-              name="contact"
+              name="rsvp"
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
