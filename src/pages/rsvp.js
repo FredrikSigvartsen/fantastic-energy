@@ -51,7 +51,7 @@ const RSVP = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": `Svar ${participants[0]}`,
+        "form-name": `rsvp`,
         participants: _.toString(participants),
         ...formValues,
       }),
