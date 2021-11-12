@@ -5,7 +5,15 @@ import { MinusIcon } from "@chakra-ui/icons"
 import Layout from "../components/Layout"
 import { navigate } from "gatsby-link"
 
-import { Box, Input, Text, Textarea, Heading, Center } from "@chakra-ui/react"
+import {
+  Box,
+  Input,
+  Text,
+  Textarea,
+  Heading,
+  Center,
+  Button,
+} from "@chakra-ui/react"
 
 const RSVP = () => {
   return (
