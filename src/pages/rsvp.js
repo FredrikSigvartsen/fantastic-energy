@@ -29,11 +29,14 @@ const Form = () => {
     <form
       name="response"
       method="post"
+      action="/takk/"
+      netlify-honeypot="bot-field"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       className="contact-us"
     >
       <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <Text mb="5px">Hvem kommer?</Text>
       <Textarea
         name="participants"
@@ -48,6 +51,7 @@ const Form = () => {
         placeholder="Fyll inn allergier, og hvem som har det"
         size="sm"
       />
+      <Button as="input"></Button>
     </form>
   )
 }
