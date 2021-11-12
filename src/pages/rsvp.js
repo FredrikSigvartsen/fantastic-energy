@@ -51,7 +51,9 @@ const Form = () => {
         placeholder="Fyll inn allergier, og hvem som har det"
         size="sm"
       />
-      <Button as="input"></Button>
+      <Button mt={4} type="submit">
+        Send inn
+      </Button>
     </form>
   )
 }
