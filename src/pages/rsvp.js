@@ -40,11 +40,13 @@ const Form = () => {
       action="/takk/"
       netlify-honeypot="bot-field"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
       className="contact-us"
     >
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="contact" />
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+
+      <input type="hidden" name="form-name" value="response" />
       <Text mb="5px">Hvem kommer?</Text>
       <Textarea
         name="participants"
@@ -58,6 +60,8 @@ const Form = () => {
         mb={["10px", "30px"]}
         placeholder="Fyll inn allergier, og hvem som har det"
         size="sm"
+        name="allergies"
+        type="text"
       />
       <Button mt={4} type="submit">
         Send inn
