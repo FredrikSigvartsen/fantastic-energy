@@ -24,9 +24,17 @@ const RSVP = () => {
         overflow="hidden"
       >
         <Box bg="whiteAlpha.700" color="" borderRadius="lg">
-          <Heading mt="30px" textAlign="center">
+          <Heading mt="30px" mb="10px" textAlign="center">
             Kommer du?
           </Heading>
+          <Center>
+            <Text color="blackAlpha.700" textAlign="center" maxW="400px">
+              Vi gleder oss veldig til å se deg! Prøv gjerne å gi oss beskjed om
+              du/dere kan (eller ikke) innen 1. februar. Husk at invitasjonen
+              gjelder kun de som er nevnt på utsiden av kortet du har mottatt
+              fra oss.
+            </Text>
+          </Center>
           <Center>
             <Box w="xl" mt="40px" p="20px">
               <Form />
