@@ -23,7 +23,7 @@ const RSVP = () => {
         maxW="full"
         overflow="hidden"
       >
-        <Box bg="whiteAlpha.600" color="" borderRadius="lg">
+        <Box bg="whiteAlpha.700" color="" borderRadius="lg">
           <Heading mt="30px" textAlign="center">
             Kommer du?
           </Heading>
@@ -64,6 +64,7 @@ const Form = () => {
         mb={["10px", "30px"]}
         variant="flushed"
         borderColor="green.100"
+        focusBorderColor="green.500"
       />
       <Text mb="5px">Allergier?</Text>
       <Input
@@ -74,6 +75,7 @@ const Form = () => {
         type="text"
         variant="flushed"
         borderColor="green.100"
+        focusBorderColor="green.500"
       />
       <Button mt={4} type="submit" colorScheme="pink">
         Send inn
