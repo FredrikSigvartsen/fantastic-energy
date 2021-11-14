@@ -53,8 +53,13 @@ const Header = () => (
         </Heading>
         <Center>
           <Link to="/rsvp">
-            <Button mt="30px" colorScheme="pink" variant="solid">
-              RSVP
+            <Button
+              textTransform="uppercase"
+              mt="30px"
+              colorScheme="pink"
+              variant="solid"
+            >
+              Svar
             </Button>
           </Link>
         </Center>

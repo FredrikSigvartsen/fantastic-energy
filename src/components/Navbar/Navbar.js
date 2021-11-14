@@ -49,7 +49,7 @@ const MenuLinks = ({ isOpen }) => (
     >
       <MenuItem>Hjem</MenuItem>
       <MenuItem to="/info/">Praktisk info</MenuItem>
-      <MenuItem to="/rsvp/">RSVP</MenuItem>
+      <MenuItem to="/rsvp/">Svar på invitasjon</MenuItem>
     </Stack>
   </Box>
 )
