@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { IconButton } from "@chakra-ui/react"
-import _ from "lodash"
-import { MinusIcon } from "@chakra-ui/icons"
+import React from "react"
 import Layout from "../components/Layout"
-import { navigate } from "gatsby-link"
 
 import {
   Box,
@@ -13,21 +9,31 @@ import {
   Heading,
   Center,
   Button,
+  Container,
 } from "@chakra-ui/react"
 
 const RSVP = () => {
   return (
     <Layout title="Kontakt">
-      <Box pb="60rem" h="xl" width="100%">
-        <Heading mt="30px" textAlign="center">
-          Kommer du?
-        </Heading>
-        <Center>
-          <Box w="xl" mt="40px" p="20px">
-            <Form />
-          </Box>
-        </Center>
-      </Box>
+      <Container
+        pb="60rem"
+        pt={["20px", "40px"]}
+        bg="pink.100"
+        centerContent
+        maxW="full"
+        overflow="hidden"
+      >
+        <Box bg="whiteAlpha.600" color="" borderRadius="lg">
+          <Heading mt="30px" textAlign="center">
+            Kommer du?
+          </Heading>
+          <Center>
+            <Box w="xl" mt="40px" p="20px">
+              <Form />
+            </Box>
+          </Center>
+        </Box>
+      </Container>
     </Layout>
   )
 }
@@ -53,9 +59,11 @@ const Form = () => {
       <Textarea
         name="participants"
         type="text"
-        placeholder="Fyll inn navn her"
+        placeholder="Skriv inn fullt navn på alle du svarer for"
         isRequired
         mb={["10px", "30px"]}
+        variant="flushed"
+        borderColor="green.100"
       />
       <Text mb="5px">Allergier?</Text>
       <Input
@@ -64,8 +72,10 @@ const Form = () => {
         size="sm"
         name="allergies"
         type="text"
+        variant="flushed"
+        borderColor="green.100"
       />
-      <Button mt={4} type="submit">
+      <Button mt={4} type="submit" colorScheme="pink">
         Send inn
       </Button>
     </form>
