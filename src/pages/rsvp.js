@@ -42,9 +42,11 @@ const Form = () => {
       data-netlify="true"
       className="contact-us"
     >
-      <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
-      </label>
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
 
       <input type="hidden" name="form-name" value="response" />
       <Text mb="5px">Hvem kommer?</Text>
