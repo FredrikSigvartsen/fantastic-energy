@@ -117,7 +117,7 @@ const partyInfo = [
   },
   {
     title: "Middag",
-    info: "Fra kl. 16.30",
+    info: "Fra kl. 17.00",
     Icon: <GiKnifeFork />,
   },
   {
