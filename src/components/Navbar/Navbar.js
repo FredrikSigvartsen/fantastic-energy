@@ -50,6 +50,21 @@ const MenuLinks = ({ isOpen }) => (
       <MenuItem>Hjem</MenuItem>
       <MenuItem to="/info/">Praktisk info</MenuItem>
       <MenuItem to="/rsvp/">Svar på invitasjon</MenuItem>
+      <ChakraLink
+        as={Link}
+        href="https://www.onskelister.no/liste?id=KxE7BcCPd4g1DPt3kfRf&fbclid=IwAR3rNM6w3t-AGDAmWM2pAqfOa2xfd-0skFs_pJ8YcHwOpx0RaBpKbhXrRmY"
+        target="_blank"
+      >
+        <Text
+          colorScheme="green"
+          textTransform="uppercase"
+          display="block"
+          fontWeight="bold"
+          letterSpacing="1.5px"
+        >
+          Ønskeliste
+        </Text>
+      </ChakraLink>
     </Stack>
   </Box>
 )
